@@ -1,0 +1,148 @@
+$pluginName: LpLinkV2;
+
+.#{$pluginName}__dialog {
+  & div.cke_dialog_ui_input_select {
+    width: 100%;
+  }
+
+  .#{$pluginName}__textStyling {
+    margin-top: 48px;
+  }
+
+  .#{$pluginName}__fontWeight {
+    & label {
+      font-weight: bold;
+    }
+  }
+
+  .#{$pluginName}__fontStyle {
+    & label {
+      font-style: italic;
+    }
+  }
+
+  /** SWITCH **/
+  $switchSize: 14;
+  $switchFactor: 2.1;
+  $switchMargins: 2;
+  $switchTransition: .2;
+  $switchUncheckedColor: #e4e4e4;
+  $switchCheckedColor: #2196F3;
+  $switchToggleColor: #fff;
+  $switchToggleBorderColor: rgba(0, 0, 0, 0.37);
+
+  .#{$pluginName}-switch {
+    position: relative;
+    display: inline-flex;
+    & input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .#{$pluginName}-slider {
+    position: relative;
+    cursor: default;
+    width: $switchSize*$switchFactor+px;
+    height: $switchSize+px;
+    background-color: $switchUncheckedColor;
+    box-shadow: $switchToggleBorderColor 0 0 $switchMargins*2.5+px inset;
+    -webkit-transition: $switchTransition+s;
+    transition: $switchTransition+s;
+    margin-right: $switchMargins*4+px;
+  }
+  .#{$pluginName}-slider:before {
+    position: absolute;
+    content: "";
+    height: ($switchSize - $switchMargins*2)+px;
+    width: ($switchSize - $switchMargins*2)+px;
+    left: $switchMargins+px;
+    bottom: $switchMargins+px;
+    background-color: $switchToggleColor;
+    -webkit-transition: $switchTransition+s;
+    transition: $switchTransition+s;
+    box-shadow: $switchToggleBorderColor 0 0 $switchMargins*1.5+px;
+  }
+
+  input:checked {
+    & + .#{$pluginName}-slider {
+      background-color: $switchCheckedColor;
+    }
+    & + .#{$pluginName}-slider:before {
+      $translateX: ($switchSize * $switchFactor + $switchMargins)/2 ;
+      -webkit-transform: translateX($translateX+px);
+      -ms-transform: translateX($translateX+px);
+      transform: translateX($translateX+px);
+    }
+  }
+
+  //rounded slider
+  .#{$pluginName}-slider.#{$pluginName}-round {
+    border-radius: $switchSize+px;
+  }
+
+  .#{$pluginName}-slider.#{$pluginName}-round:before {
+    border-radius: 50%;
+  }
+
+  /** END OF SWITCH **/
+
+  /** TOGGLE **/
+  $toggleSize: 33;
+  $toggleTransition: .2;
+  $toggleUncheckedColor: #f5f5f5;
+  $toggleCheckedColor: #2196F3;
+  $toggleBorderColor: rgba(0, 0, 0, 0.5);
+
+  label.#{$pluginName}-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $toggleSize+px;
+    height: $toggleSize+px;
+    background: $toggleUncheckedColor;
+    transition: $toggleTransition+s;
+    border-radius: $toggleSize*.15+px;
+    box-shadow: $toggleBorderColor 0 0 $toggleSize*.1+px;
+    cursor: default;
+    & span {
+      cursor: default;
+    }
+    &:hover {
+      box-shadow: $toggleCheckedColor 0 0 $toggleSize*.1+px;
+    }
+  }
+  input:checked + label.#{$pluginName}-toggle {
+    background: $toggleCheckedColor;
+    box-shadow: $toggleBorderColor 0 0 $toggleSize*.15+px inset;
+  }
+
+  div.#{$pluginName}-toggle {
+    display: flex;
+    justify-content: center;
+    &>label {
+      display: none;
+    }
+    & .cke_dialog_ui_hbox {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+      td {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .#{$pluginName}-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /** END OF TOGGLE **/
+}

@@ -1,0 +1,126 @@
+.LpLinkV2__dialog div.cke_dialog_ui_input_select {
+    width: 100%
+}
+
+.LpLinkV2__dialog .LpLinkV2__textStyling {
+    margin-top: 48px
+}
+
+.LpLinkV2__dialog .LpLinkV2__fontWeight label {
+    font-weight: bold
+}
+
+.LpLinkV2__dialog .LpLinkV2__fontStyle label {
+    font-style: italic
+}
+
+.LpLinkV2__dialog .LpLinkV2-switch {
+    position: relative;
+    display: inline-flex
+}
+
+.LpLinkV2__dialog .LpLinkV2-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0
+}
+
+.LpLinkV2__dialog .LpLinkV2-slider {
+    position: relative;
+    cursor: default;
+    width: 29.4px;
+    height: 14px;
+    background-color: #e4e4e4;
+    box-shadow: rgba(0, 0, 0, .37) 0 0 5px inset;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    margin-right: 8px
+}
+
+.LpLinkV2__dialog .LpLinkV2-slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    box-shadow: rgba(0, 0, 0, .37) 0 0 3px
+}
+
+.LpLinkV2__dialog input:checked+.LpLinkV2-slider {
+    background-color: #2196f3
+}
+
+.LpLinkV2__dialog input:checked+.LpLinkV2-slider:before {
+    -webkit-transform: translateX(15.7px);
+    -ms-transform: translateX(15.7px);
+    transform: translateX(15.7px)
+}
+
+.LpLinkV2__dialog .LpLinkV2-slider.LpLinkV2-round {
+    border-radius: 14px
+}
+
+.LpLinkV2__dialog .LpLinkV2-slider.LpLinkV2-round:before {
+    border-radius: 50%
+}
+
+.LpLinkV2__dialog label.LpLinkV2-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33px;
+    height: 33px;
+    background: #f5f5f5;
+    transition: 0.2s;
+    border-radius: 4.95px;
+    box-shadow: rgba(0, 0, 0, .5) 0 0 3.3px;
+    cursor: default
+}
+
+.LpLinkV2__dialog label.LpLinkV2-toggle span {
+    cursor: default
+}
+
+.LpLinkV2__dialog label.LpLinkV2-toggle:hover {
+    box-shadow: #2196f3 0 0 3.3px
+}
+
+.LpLinkV2__dialog input:checked+label.LpLinkV2-toggle {
+    background: #2196f3;
+    box-shadow: rgba(0, 0, 0, .5) 0 0 4.95px inset
+}
+
+.LpLinkV2__dialog div.LpLinkV2-toggle {
+    display: flex;
+    justify-content: center
+}
+
+.LpLinkV2__dialog div.LpLinkV2-toggle>label {
+    display: none
+}
+
+.LpLinkV2__dialog div.LpLinkV2-toggle .cke_dialog_ui_hbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0
+}
+
+.LpLinkV2__dialog div.LpLinkV2-toggle .cke_dialog_ui_hbox td {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.LpLinkV2__dialog .LpLinkV2-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0
+}
+
+/*# sourceMappingURL=styles.css.map */

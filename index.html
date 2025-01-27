@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Templates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            flex-direction: column;
+            padding-top: 30px;
+            text-align: center; /* Center align the text */
+        }
+
+        .main{
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%; /* Ensure h1 takes up full width */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 templates per row */
+            gap: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 1200px;
+            justify-items: center; /* Center the grid items */
+            box-sizing: border-box;
+            transition: all 0.3s ease; /* Smooth transition when resizing */
+        }
+
+        .lp-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+            width: 100%; /* Ensures items take full width */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        .lp-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .lp-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover; /* Ensure images fit properly */
+        }
+
+        .lp-item .description {
+            padding: 15px;
+        }
+
+        .lp-item .description h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .lp-item .description p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .lp-item a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .lp-item a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for iframe container */
+        #iframe-container {
+            width: 70%;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none; /* Hide initially */
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Close button styling */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* When iframe is visible, reduce the size of the items */
+        body.iframe-active .container {
+            grid-template-columns: repeat(3, 1fr); /* Keep 3 items in a row */
+            gap: 10px;
+        }
+
+        body.iframe-active .lp-item {
+            max-width: 250px; /* Make items smaller and square */
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+    <div class="container">
+        <!-- LP Item 1 -->
+        <div class="lp-item" onclick="viewTemplate('./Box Form/index.html')">
+            <img src="./Box Form/preview.png" alt="Box Form">
+            <div class="description">
+                <h3>Box Form</h3>
+                <p>A clean and simple box form template for your landing page.</p>
+            </div>
+        </div>
+
+        <!-- LP Item 2 -->
+        <div class="lp-item" onclick="viewTemplate('./Plain Red/index.html')">
+            <img src="./Plain Red/preview.png" alt="Plain Red">
+            <div class="description">
+                <h3>Plain Red</h3>
+                <p>A bold, red-themed landing page design.</p>
+            </div>
+        </div>
+
+        <!-- LP Item 3 -->
+        <div class="lp-item" onclick="viewTemplate('./Big Banner/index.html')">
+            <img src="./Big Banner/preview.png" alt="Big Banner">
+            <div class="description">
+                <h3>Big Banner</h3>
+                <p>A bold, big-banner landing page template.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Iframe Container -->
+    <div id="iframe-container">
+        <button id="toggle-design-btn">Enable Design Mode for Iframe</button>
+        <button class="close-btn" onclick="closeIframe()">X</button>
+        <iframe id="template-iframe" src=""></iframe>
+    </div>
+    </div>
+
+    <script>
+        function viewTemplate(url) {
+            // Display the iframe and load the template
+            document.getElementById('template-iframe').src = url;
+            document.getElementById('iframe-container').style.display = 'block';
+            
+            // Make the items smaller and squarer
+            document.body.classList.add('iframe-active');
+
+            document.querySelector('.container').style.display = 'flex'
+            document.querySelector('.container').style.flexDirection = 'column'
+            document.querySelector('.container').style.width = '25%'
+            document.querySelector('.main').style.display = 'flex'
+        }
+
+        function closeIframe() {
+            // Hide iframe and reset layout
+            document.getElementById('iframe-container').style.display = 'none';
+            
+            // Revert the layout styles
+            document.body.classList.remove('iframe-active');
+
+            document.querySelector('.container').style.display = ''
+            document.querySelector('.container').style.width = '100%'
+        }
+
+        let isDesignMode = false;
+
+        // Toggle document.designMode for iframe content
+        document.getElementById('toggle-design-btn').addEventListener('click', function() {
+            isDesignMode = !isDesignMode;
+            
+            // Access iframe's document and toggle designMode
+            const iframeDocument = document.getElementById('template-iframe').contentWindow.document;
+
+            // Ensure iframe is loaded
+            iframeDocument.body.contentEditable = isDesignMode ? 'true' : 'false';
+            iframeDocument.designMode = isDesignMode ? 'on' : 'off';
+            
+            // Change the button text based on state
+            this.textContent = isDesignMode ? 'Disable Design Mode for Iframe' : 'Enable Design Mode for Iframe';
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Web Applications and APIs with Fortinet FortiAppSec Cloud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
+
+    <style>
+        .container {
+            max-width: 991px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- section 1 -->
+        <div class="row mt-3" style="width: 981px; height: 88px; padding: 14px 28px">
+            <div class="col-8 d-flex align-items-center">
+                <h2 style="color: #cc0000; font-family: Arial, Helvetica, sans-serif; font-size: 22px;"><b>Secure Web Applications and APIs with Fortinet FortiAppSec Cloud</b></h2>
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-end">
+                <img src="images/company-logo.png" alt="" style="width: 200px; height: 24px;">
+            </div>
+        </div>
+
+
+        <hr style="width: 970px; color:  #777;">
+
+        <!-- section 2 -->
+        <div style="display: flex; justify-content: center; font-family: Arial, Helvetica, sans-serif; margin: 35px;">
+            <div style="width: 495px;">
+
+                <p style="color: #777; font-size: 14px; margin: 0 0 10px"><b>Improve Protection and Save Design Time</b><br>
+                </p>
+
+                <p style="color: #777; font-size: 14px; margin: 0 0 10px">Cloud adoption continues to grow as
+                    organizations leverage cloud computing’s ability to accelerate digital transformation. However, the
+                    rapid expansion of cloud deployments brings new challenges, from protecting a larger attack surface
+                    to ensuring network performance.<br><br>
+                    Organizations migrating to the cloud can streamline deployments and enhance security posture by
+                    leveraging a tested reference architecture. Fortinet offers validated cloud network security
+                    architectures that cover ingress, egress, east-west traffic inspection, and SD-WAN.<br><br>
+
+                    Key benefits of adopting these architectures include:
+                </p>
+
+                <ul style="color: #777; font-size: 14px;">
+                    <li>Reduced risk</li>
+                    <li>Consistent security posture</li>
+                    <li>Comprehensive protection</li>
+                </ul>
+
+                <p style="color: #777; font-size: 14px;"><a href="" style="color: #777;"><b>Download the whitepaper</b></a> to discover how these architectures work and how they can be implemented to secure your cloud environment.</p>
+
+            </div>
+
+            <div style="border: 1px solid #ccc; margin-left: 30px; background-color: #F7F7F7;" class="mb-5">
+                <form id="contactForm" action="send-email.php" method="POST" class="mb-5"
+                    style="width: 374px; font-family: Arial, sans-serif; padding: 7px;">
+                    <p style="font-size: 16px; margin: 0 0 10px" class="mt-2"><b>My Details</b></p>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="salutation" style="font-size: 14px; color: #777777">Salutation</label>
+                        <input type="text" name="salutation" id="salutation"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="salutationError" class="error-text"></span><br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="fname" style=" font-size: 14px; color: #777777">First Name</label>
+                        <input type="text" name="fname" id="fname"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="fnameError" class="error-text"></span> <br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="lname" style=" font-size: 14px; color: #777777">Last Name</label>
+                        <input type="text" name="lname" id="lname"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="lnameError" class="error-text"></span> <br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="email" style=" font-size: 14px; color: #777777">Email-Address</label>
+                        <input type="email" name="email" id="email"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="emailError" class="error-text"></span> <br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="phone" style=" font-size: 14px; color: #777777">Telephone</label>
+                        <input type="phone" name="phone" id="phone"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="phoneError" class="error-text"></span> <br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="jtitle" style=" font-size: 14px; color: #777777">Job Title</label>
+                        <input type="text" name="jtitle" id="jtitle"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="jtitleError" class="error-text"></span><br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="cname" style=" font-size: 14px; color: #777777">Company Name</label>
+                        <input type="text" name="cname" id="cname"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="cnameError" class="error-text"></span> <br>
+
+
+                  
+                    
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="town" style=" font-size: 14px; color: #777777">Town</label>
+                        <input type="text" name="town" id="town"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="townError" class="error-text"></span> <br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="region" style=" font-size: 14px; color: #777777">Region</label>
+                        <input type="text" name="region" id="region"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="regionError" class="error-text"></span> <br>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="pcode" style=" font-size: 14px; color: #777777">Post Code</label>
+                        <input type="text" name="pcode" id="pcode"
+                            style="width: 196px; height: 34px; padding: 6px 12px; border: 1px solid #ccc; border-radius: 5px">
+                    </div>
+                    <span id="pcodeError" class="error-text"></span> <br>
+
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <label for="country" style=" font-size: 14px; color: #777777">Country </label>
+                        <select name="country" id="country"
+                            style="width: 196px; height: 34px; padding: 6px 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; color: #777777;">
+                            
+            </select>
+                    </div>
+                    <span id="countryError" class="error-text"></span>
+                    <br>
+
+                    
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <span style="font-size: 14px; color: #777777; font-weight: bold;">
+                          Are you considering or planning to implement a Cloud Security based project in the near future?
+                        </span>
+                      </div>
+                      
+                      <p></p>
+                      
+                      <label style="display: flex; align-items: center; font-size: 14px; color: #777777; margin-bottom: 10px;">
+                        <input type="radio" name="cloudSecurity" style="margin-right: 8px;">
+                        Yes, we have plans to deploy a new Cloud Security solution within the next 6 months.
+                      </label>
+                      
+                      <label style="display: flex; align-items: center; font-size: 14px; color: #777777; margin-bottom: 10px;">
+                        <input type="radio" name="cloudSecurity" style="margin-right: 8px;">
+                        Yes, we have plans to deploy a new Cloud Security solution within the next 6 months.
+                      </label>
+                      
+                      <label style="display: flex; align-items: center; font-size: 14px; color: #777777; margin-bottom: 10px;">
+                        <input type="radio" name="cloudSecurity" style="margin-right: 8px;">
+                        No defined timeline yet.
+                      </label>
+                      
+                      <span id="radioError" class="error-text"></span>
+                      <span id="pcodeError" class="error-text"></span>
+                      
+                      
+                    
+                    <!-- Section 1 -->
+
+
+                    <div style="display: flex; justify-content: center; align-items: center;" class="mt-5">
+                        <button id="submitBtn" onclick="validateForm()" type="button"
+                            style="width: 160px; height: 36px; background-color: #ff0013; color: white; border: 1px solid red; margin-left: 20px; border-radius: 5px; font-size: 14px">
+                            <b>Download Now</b>
+                        </button>
+                    </div>
+
+                    <div class="form-check mt-4">
+                        <input type="checkbox" name="stimme" id="stimme" class="form-check-input">
+                        <label for="stimme" class="form-check-label" style="font-size: 12px; color: #777777;">
+                            By clicking to our  <a
+                                href="https://response.insightsforprofessionals.co.uk/PrivacyPolicy"
+                                style="color: #777777; text-decoration: none"> privacy policy</a>,  confirm that you are over the age of 16, and that inbox insight and Fortinet can contact you for marketing purposes via email, social, digital ads, post and telephone.
+                    </div>
+                    <span id="stimmeError" class="error-text"></span>
+
+
+                </form>
+            </div>
+        </div>
+        <div class="mb-3">
+            <p style="font-size: 14px; color: #777; margin: 14px 0">This service was brought to you by…</p>
+            <img src="images/Insights-For-Professionals.jpg" alt="" style="width: 234px; height: 40px">
+        </div> <br>
+    </div>
+    <script>
+   function validateForm(event) {
+  const errors = {
+    salutation: "Please fill in the salutation.",
+    invalidSalutation: "Please enter a correct salutation.",
+    fname: "First Name is required.",
+    lname: "Last Name is required.",
+    email: "Email address is required.",
+    invalidEmail: "Please enter a valid email address.",
+    phone: "Phone number is required.",
+    invalidPhone: "Please enter a valid phone number.",
+    jtitle: "Job title is required.",
+    cname: "Company name is required.",
+    town: "Town is required.",
+    region: "Region is required.",
+    pcode: "Post Code is required.",
+    country: "Please select a country.",
+    privacy: "You must agree to the privacy policy.",
+    radio: "Please select an option.",
+  };
+
+  const fields = [
+    { id: "salutation", condition: val => val && ["Miss", "Mr", "Mrs"].includes(val), error: ["salutation", "invalidSalutation"] },
+    { id: "fname", condition: val => val, error: ["fname"] },
+    { id: "lname", condition: val => val, error: ["lname"] },
+    { id: "email", condition: val => /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(val), error: ["email", "invalidEmail"] },
+    { id: "phone", condition: val => /^\d{10}$/.test(val), error: ["phone", "invalidPhone"] },
+    { id: "jtitle", condition: val => val, error: ["jtitle"] },
+    { id: "cname", condition: val => val, error: ["cname"] },
+    { id: "town", condition: val => val, error: ["town"] },
+    { id: "region", condition: val => val, error: ["region"] },
+    { id: "pcode", condition: val => val, error: ["pcode"] },
+    { id: "country", condition: val => val !== "selecione", error: ["country"] },
+    { id: "stimme", condition: () => document.getElementById("stimme").checked, error: ["privacy"] },
+  ];
+
+  const radioChecked = Array.from(document.getElementsByName("cloudSecurity")).some(radio => radio.checked);
+
+  // Clear previous errors
+  fields.forEach(f => document.getElementById(`${f.id}Error`).textContent = "");
+  document.getElementById("radioError").textContent = "";
+
+  // Validate fields
+  let isValid = true;
+  fields.forEach(({ id, condition, error }) => {
+    const value = document.getElementById(id).value.trim();
+    if (!condition(value)) {
+      const errorElement = document.getElementById(`${id}Error`);
+      errorElement.textContent = errors[error[!value ? 0 : 1]];
+      errorElement.style.color = "red";
+      errorElement.style.fontSize = "12px";
+      errorElement.style.marginLeft = id === "stimme" ? "30px" : "170px";
+      isValid = false;
+    }
+  });
+
+  // Validate radio buttons
+  if (!radioChecked) {
+    const radioError = document.getElementById("radioError");
+    radioError.textContent = errors.radio;
+    radioError.style.color = "red";
+    radioError.style.fontSize = "12px";
+    isValid = false;
+  }
+
+  // Download PDF if valid
+  if (isValid) {
+    const a = document.createElement("a");
+    a.href = "pdf/Secure-Web-Applications-and-APIs-with-Fortinet-FortiAppSec-Cloud.pdf";
+    a.download = "Secure-Web-Applications-and-APIs-with-Fortinet-FortiAppSec-Cloud.pdf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+}
+
+        
+        async function populateCountries() {
+          const dropdown = document.getElementById('country');
+          
+          try {
+            const response = await fetch('https://restcountries.com/v3.1/all');
+            const countries = await response.json();
+    
+            countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
+    
+            countries.forEach(country => {
+              const option = document.createElement('option');
+              option.value = country.cca2; // ISO 3166-1 alpha-2 country code
+              option.textContent = country.name.common; // Country name
+              dropdown.appendChild(option);
+            });
+    
+            const placeholder = document.createElement('option');
+            placeholder.value = '';
+            placeholder.textContent = 'Select a country';
+            placeholder.disabled = true;
+            placeholder.selected = true;
+            dropdown.insertBefore(placeholder, dropdown.firstChild);
+          } catch (error) {
+            console.error('Error fetching countries:', error);
+          }
+        }
+    
+        document.addEventListener('DOMContentLoaded', populateCountries);
+    </script>
+    
+
+</body>
+
+</html>

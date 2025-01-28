@@ -16,10 +16,10 @@
             height: 100vh;
             flex-direction: column;
             padding-top: 30px;
-            text-align: center; /* Center align the text */
+            text-align: center;
         }
 
-        .main{
+        .main {
             width: 100%;
         }
 
@@ -27,19 +27,18 @@
             color: #333;
             margin-bottom: 20px;
             text-align: center;
-            width: 100%; /* Ensure h1 takes up full width */
+            width: 100%;
         }
 
         .container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 templates per row */
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 20px;
             width: 80%;
             max-width: 1200px;
-            justify-items: center; /* Center the grid items */
+            justify-items: center;
             box-sizing: border-box;
-            transition: all 0.3s ease; /* Smooth transition when resizing */
         }
 
         .lp-item {
@@ -50,8 +49,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             cursor: pointer;
-            width: 100%; /* Ensures items take full width */
-            transition: all 0.3s ease; /* Smooth transition */
+            width: 100%;
         }
 
         .lp-item:hover {
@@ -62,7 +60,7 @@
         .lp-item img {
             width: 100%;
             height: 300px;
-            object-fit: cover; /* Ensure images fit properly */
+            object-fit: cover;
         }
 
         .lp-item .description {
@@ -80,28 +78,12 @@
             color: #777;
         }
 
-        .lp-item a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .lp-item a:hover {
-            background-color: #0056b3;
-        }
-
-        /* Style for iframe container */
         #iframe-container {
             width: 70%;
             height: 100vh;
             padding: 20px;
             box-sizing: border-box;
-            display: none; /* Hide initially */
+            display: none;
             position: relative;
         }
 
@@ -111,7 +93,6 @@
             border: none;
         }
 
-        /* Close button styling */
         .close-btn {
             position: absolute;
             top: 20px;
@@ -125,101 +106,232 @@
             cursor: pointer;
         }
 
-        /* When iframe is visible, reduce the size of the items */
-        body.iframe-active .container {
-            grid-template-columns: repeat(3, 1fr); /* Keep 3 items in a row */
-            gap: 10px;
+        .code-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        body.iframe-active .lp-item {
-            max-width: 250px; /* Make items smaller and square */
-            height: 250px;
+        .code-btn:hover {
+            background-color: #0056b3;
+        }
+
+        #code-editor {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: monospace;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+        }
+
+        #save-code-btn {
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #save-code-btn:hover {
+            background-color: #218838;
         }
     </style>
-</head>
-<body>
-
-    <div class="main">
-    <div class="container">
-        <!-- LP Item 1 -->
-        <div class="lp-item" onclick="viewTemplate('./Box Form/index.html')">
-            <img src="./Box Form/preview.png" alt="Box Form">
-            <div class="description">
-                <h3>Box Form</h3>
-                <p>A clean and simple box form template for your landing page.</p>
+    </head>
+    <body>
+    
+        <div class="main">
+            <div class="container">
+                <!-- LP Items -->
+                <div class="lp-item" onclick="viewTemplate('./Box Form/index.html')">
+                    <img src="./Box Form/preview.png" alt="Box Form">
+                    <div class="description">
+                        <h3>Box Form</h3>
+                        <p>A clean and simple box form template for your landing page.</p>
+                    </div>
+                </div>
+    
+                <div class="lp-item" onclick="viewTemplate('./Plain Red/index.html')">
+                    <img src="./Plain Red/preview.png" alt="Plain Red">
+                    <div class="description">
+                        <h3>Plain Red</h3>
+                        <p>A bold, red-themed landing page design.</p>
+                    </div>
+                </div>
+    
+                <div class="lp-item" onclick="viewTemplate('./Big Banner/index.html')">
+                    <img src="./Big Banner/preview.png" alt="Big Banner">
+                    <div class="description">
+                        <h3>Big Banner</h3>
+                        <p>A bold, big-banner landing page template.</p>
+                    </div>
+                </div>
+                <div class="lp-item" onclick="viewTemplate('./Box Form/index.html')">
+                    <img src="./Box Form/preview.png" alt="Box Form">
+                    <div class="description">
+                        <h3>Box Form</h3>
+                        <p>A clean and simple box form template for your landing page.</p>
+                    </div>
+                </div>
+    
+                <div class="lp-item" onclick="viewTemplate('./Plain Red/index.html')">
+                    <img src="./Plain Red/preview.png" alt="Plain Red">
+                    <div class="description">
+                        <h3>Plain Red</h3>
+                        <p>A bold, red-themed landing page design.</p>
+                    </div>
+                </div>
+    
+                <div class="lp-item" onclick="viewTemplate('./Big Banner/index.html')">
+                    <img src="./Big Banner/preview.png" alt="Big Banner">
+                    <div class="description">
+                        <h3>Big Banner</h3>
+                        <p>A bold, big-banner landing page template.</p>
+                    </div>
+                </div>
+                <div class="lp-item" onclick="viewTemplate('./Box Form/index.html')">
+                    <img src="./Box Form/preview.png" alt="Box Form">
+                    <div class="description">
+                        <h3>Box Form</h3>
+                        <p>A clean and simple box form template for your landing page.</p>
+                    </div>
+                </div>
+    
+                <div class="lp-item" onclick="viewTemplate('./Plain Red/index.html')">
+                    <img src="./Plain Red/preview.png" alt="Plain Red">
+                    <div class="description">
+                        <h3>Plain Red</h3>
+                        <p>A bold, red-themed landing page design.</p>
+                    </div>
+                </div>
+    
+                <div class="lp-item" onclick="viewTemplate('./Big Banner/index.html')">
+                    <img src="./Big Banner/preview.png" alt="Big Banner">
+                    <div class="description">
+                        <h3>Big Banner</h3>
+                        <p>A bold, big-banner landing page template.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="iframe-container">
+                <button class="close-btn" onclick="closeIframe()">X</button>
+                <button class="design-btn" onclick="toggleDesignMode()">Enable Design Mode</button>
+                <button class="code-btn" onclick="toggleCodeView()">Code</button>
+                <textarea id="code-editor"></textarea>
+                <button id="save-code-btn" onclick="saveCode()">Save Code</button>
+                <iframe id="template-iframe"></iframe>
             </div>
         </div>
+    
+        <script>
+            let isCodeViewActive = false;
+            let isDesignMode = false;
+    
+            function viewTemplate(url) {
+                const iframe = document.getElementById('template-iframe');
+                iframe.src = url;
+    
+                document.getElementById('iframe-container').style.display = 'block';
 
-        <!-- LP Item 2 -->
-        <div class="lp-item" onclick="viewTemplate('./Plain Red/index.html')">
-            <img src="./Plain Red/preview.png" alt="Plain Red">
-            <div class="description">
-                <h3>Plain Red</h3>
-                <p>A bold, red-themed landing page design.</p>
-            </div>
-        </div>
-
-        <!-- LP Item 3 -->
-        <div class="lp-item" onclick="viewTemplate('./Big Banner/index.html')">
-            <img src="./Big Banner/preview.png" alt="Big Banner">
-            <div class="description">
-                <h3>Big Banner</h3>
-                <p>A bold, big-banner landing page template.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Iframe Container -->
-    <div id="iframe-container">
-        <button id="toggle-design-btn">Enable Design Mode for Iframe</button>
-        <button class="close-btn" onclick="closeIframe()">X</button>
-        <iframe id="template-iframe" src=""></iframe>
-    </div>
-    </div>
-
-    <script>
-        function viewTemplate(url) {
-            // Display the iframe and load the template
-            document.getElementById('template-iframe').src = url;
-            document.getElementById('iframe-container').style.display = 'block';
-            
-            // Make the items smaller and squarer
-            document.body.classList.add('iframe-active');
-
-            document.querySelector('.container').style.display = 'flex'
+                document.querySelector('.container').style.display = 'flex'
             document.querySelector('.container').style.flexDirection = 'column'
             document.querySelector('.container').style.width = '25%'
             document.querySelector('.main').style.display = 'flex'
-        }
+            }
+    
+            function closeIframe() {
+                document.getElementById('iframe-container').style.display = 'none';
 
-        function closeIframe() {
-            // Hide iframe and reset layout
-            document.getElementById('iframe-container').style.display = 'none';
-            
-            // Revert the layout styles
-            document.body.classList.remove('iframe-active');
-
-            document.querySelector('.container').style.display = ''
+                document.querySelector('.container').style.display = ''
             document.querySelector('.container').style.width = '100%'
-        }
-
-        let isDesignMode = false;
-
-        // Toggle document.designMode for iframe content
-        document.getElementById('toggle-design-btn').addEventListener('click', function() {
-            isDesignMode = !isDesignMode;
-            
-            // Access iframe's document and toggle designMode
-            const iframeDocument = document.getElementById('template-iframe').contentWindow.document;
-
-            // Ensure iframe is loaded
-            iframeDocument.body.contentEditable = isDesignMode ? 'true' : 'false';
-            iframeDocument.designMode = isDesignMode ? 'on' : 'off';
-            
-            // Change the button text based on state
-            this.textContent = isDesignMode ? 'Disable Design Mode for Iframe' : 'Enable Design Mode for Iframe';
-        });
-    </script>
-
-</body>
-</html>
+            }
+    
+            function toggleDesignMode() {
+                const iframe = document.getElementById('template-iframe');
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    
+                isDesignMode = !isDesignMode;
+                iframeDocument.designMode = isDesignMode ? 'on' : 'off';
+    
+                document.querySelector('.design-btn').textContent = isDesignMode
+                    ? 'Disable Design Mode'
+                    : 'Enable Design Mode';
+    
+                // alert(`Design Mode ${isDesignMode ? 'Enabled' : 'Disabled'}`);
+            }
+    
+            function toggleCodeView() {
+                const iframe = document.getElementById('template-iframe');
+                const codeEditor = document.getElementById('code-editor');
+                const saveCodeBtn = document.getElementById('save-code-btn');
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    
+                if (!isCodeViewActive) {
+                    // Populate code editor with current iframe content
+                    const iframeHTML = iframeDocument.documentElement.outerHTML;
+                    codeEditor.value = iframeHTML;
+    
+                    // Show code editor
+                    codeEditor.style.display = 'block';
+                    saveCodeBtn.style.display = 'block';
+                    iframe.style.display = 'none';
+    
+                    isCodeViewActive = true;
+                } else {
+                    // Hide code editor
+                    codeEditor.style.display = 'none';
+                    saveCodeBtn.style.display = 'none';
+                    iframe.style.display = 'block';
+    
+                    isCodeViewActive = false;
+                }
+            }
+    
+            function saveCode() {
+                const iframe = document.getElementById('template-iframe');
+                const codeEditor = document.getElementById('code-editor');
+                const newCode = codeEditor.value;
+    
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                iframeDocument.open();
+                iframeDocument.write(newCode);
+                iframeDocument.close();
+    
+                alert('Code updated!');
+            }
+    
+            // Sync design mode changes to code editor when toggling to code view
+            function syncDesignModeChanges() {
+                const iframe = document.getElementById('template-iframe');
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                const iframeHTML = iframeDocument.documentElement.outerHTML;
+    
+                const codeEditor = document.getElementById('code-editor');
+                codeEditor.value = iframeHTML;
+            }
+    
+            // Ensure changes made in design mode are reflected when toggling to code view
+            document.querySelector('.code-btn').addEventListener('click', () => {
+                if (isDesignMode) syncDesignModeChanges();
+            });
+        </script>
+    
+    </body>
+    </html>
+    
